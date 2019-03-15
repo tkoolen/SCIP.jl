@@ -1,6 +1,6 @@
 # Special-Ordered-Set type 1
 
-MOI.supports_constraint(o::Optimizer, ::Type{VECTOR}, ::Type{SOS1}) = true
+MOI.supports_constraint(o::Optimizer, ::Type{VECTOR}, ::Type{<:SOS1}) = true
 
 function MOI.add_constraint(o::Optimizer, func::VECTOR, set::SOS1)
     allow_modification(o)
