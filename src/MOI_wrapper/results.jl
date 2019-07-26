@@ -43,7 +43,7 @@ function assert_stage(o::Optimizer, stages)
 end
 
 "Make sure that the problem was solved (SCIP is in SOLVED stage)."
-assert_solved(o::Optimizer) = assert_stage(o, [SCIP_STAGE_SOLVED])
+assert_solved(o::Optimizer) = assert_stage(o, [SCIP_STAGE_SOLVED, SCIP_STAGE_SOLVING])
 
 "Make sure that: TRANSFORMED ≤ stage ≤ SOLVED."
 assert_after_prob(o::Optimizer) = assert_stage(o, SCIP_Stage.(3:10))
